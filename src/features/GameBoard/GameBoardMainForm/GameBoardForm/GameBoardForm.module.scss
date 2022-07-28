@@ -8,4 +8,17 @@
 
 .cell {
   cursor: pointer;
+
+}
+
+.cellWin {
+  background-color: green;
+  color: white;
+  border: 1px solid green;
+}
+
+.cellLose {
+  background-color: red;
+  color: white;
+  border: 1px solid red;
 }

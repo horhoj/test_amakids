@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import classNames from 'classnames';
 import { useAppDispatch, useAppSelector } from '../../../../store/hooks';
 import { gameBoardSlice } from '../../slice';
 import { Point } from '../../types';
@@ -46,25 +47,29 @@ export const GameBoardForm: FC = () => {
         xList.map((_, xIndex) => (
           <button
             key={xIndex}
-            className={styles.cell}
+            className={classNames(
+              styles.cell,
+              gameStatus === 'win' &&
+                pathLastPoint &&
+                pathLastPoint.y === yIndex &&
+                pathLastPoint.x === xIndex &&
+                styles.cellWin,
+              gameStatus === 'lose' &&
+                pathLastPoint &&
+                pathLastPoint.y === yIndex &&
+                pathLastPoint.x === xIndex &&
+                styles.cellLose,
+            )}
             onClick={() => handleCellClk({ x: xIndex, y: yIndex })}
           >
             {startPathPoint &&
               startPathPoint.y === yIndex &&
               startPathPoint.x === xIndex &&
-              'S'}
+              'S'}{' '}
             {currentStepPoint &&
               currentStepPoint.y === yIndex &&
               currentStepPoint.x === xIndex &&
               '!'}
-            {gameStatus === 'lose' &&
-              pathLastPoint &&
-              pathLastPoint.y === yIndex &&
-              pathLastPoint.x === xIndex && <div>L</div>}
-            {gameStatus === 'win' &&
-              pathLastPoint &&
-              pathLastPoint.y === yIndex &&
-              pathLastPoint.x === xIndex && <div>W</div>}
           </button>
         )),
       )}

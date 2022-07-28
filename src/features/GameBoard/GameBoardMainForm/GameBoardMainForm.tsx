@@ -20,6 +20,13 @@ export const GameBoardMainForm: FC = () => {
     }
   }, [gameStatus]);
 
+  useEffect(
+    () => () => {
+      dispatch(gameBoardSlice.actions.clear());
+    },
+    [],
+  );
+
   return (
     <div className={styles.wrap}>
       <GameStatusForm />
