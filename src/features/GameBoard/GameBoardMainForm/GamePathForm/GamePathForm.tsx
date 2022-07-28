@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../../store/hooks';
 import { gameBoardSlice } from '../../slice';
 import styles from './GamePathForm.module.scss';
+import { Arrow } from './Arrow';
 
 export const GamePathForm: FC = () => {
   const dispatch = useAppDispatch();
@@ -30,7 +31,7 @@ export const GamePathForm: FC = () => {
               className={styles.cell}
               onClick={() => handlePathStepBtnClk(index)}
             >
-              {pathStep}
+              <Arrow pathStep={pathStep} />
             </button>
           ))}
         </div>
