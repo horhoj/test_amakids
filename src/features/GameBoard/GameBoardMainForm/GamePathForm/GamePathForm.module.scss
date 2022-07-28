@@ -1,0 +1,12 @@
+.wrap {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.cell {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+

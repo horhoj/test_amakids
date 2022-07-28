@@ -1,0 +1,23 @@
+.wrap {
+  display: flex;
+  gap: 10px;
+}
+
+.win {
+  background-color: green;
+  color: white;
+}
+
+.lose {
+  background-color: red;
+  color: white;
+}
+
+.status {
+  padding: 10px;
+}
+
+.repeatBtn {
+  padding: 10px;
+  cursor: pointer;
+}

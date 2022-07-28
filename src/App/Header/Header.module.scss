@@ -1,0 +1,23 @@
+.wrap {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  & > ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+    & > li > a {
+      color: green;
+      text-decoration: none;
+
+      &:global.active {
+        font-weight: 600;
+      }
+    }
+  }
+}
